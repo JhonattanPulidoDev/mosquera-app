@@ -1,0 +1,24 @@
+/* ============================================================
+  Navbar Component Styles
+  Tailwind handles most layout/color utilities.
+  This file adds the active-link state and mobile-menu animation
+  that Tailwind cannot apply via routerLinkActive.
+  ============================================================ */
+
+/* Active link highlight (applied by routerLinkActive) */
+.navbar__link--active {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Mobile menu: hidden by default, smooth expand when open */
+.navbar__mobile-menu {
+  max-height: 0;
+  opacity: 0;
+}
+
+.navbar__mobile-menu--open {
+  max-height: 500px; /* large enough for all links */
+  opacity: 1;
+}

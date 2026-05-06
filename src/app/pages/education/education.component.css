@@ -1,0 +1,136 @@
+/* ============================================================
+  EDUCATION PAGE – Component Styles
+  Tailwind handles layout, color, and spacing.
+  This file adds:
+    - Hero decorative blobs
+    - Fade-in entrance animations
+    - Waste card themed glow border (per category color)
+    - Guide step connector line (desktop)
+    - CTA banner decorative elements
+    - prefers-reduced-motion guard
+  ============================================================ */
+
+/* ── Hero decorative blobs ──────────────────────────────────── */
+.edu-hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.edu-hero__blob--tl {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  left: -120px;
+  background: radial-gradient(circle, #bbf7d0 0%, transparent 70%);
+  opacity: 0.5;
+}
+
+.edu-hero__blob--br {
+  width: 320px;
+  height: 320px;
+  bottom: -80px;
+  right: -80px;
+  background: radial-gradient(circle, #a7f3d0 0%, transparent 70%);
+  opacity: 0.4;
+}
+
+/* ── Entrance animations ───────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in-up    { animation: fadeInUp    0.7s ease both; }
+.fade-in-right { animation: fadeInRight 0.7s ease 0.15s both; }
+
+/* ── Waste cards – colored glow border on hover ─────────────── */
+
+/* Organic – green glow */
+.waste-card.border-green-300:hover {
+  box-shadow: 0 20px 40px -12px rgba(74, 222, 128, 0.3);
+}
+
+/* Recyclable – blue glow */
+.waste-card.border-blue-300:hover {
+  box-shadow: 0 20px 40px -12px rgba(59, 130, 246, 0.25);
+}
+
+/* Non-recyclable – gray glow */
+.waste-card.border-gray-400:hover {
+  box-shadow: 0 20px 40px -12px rgba(107, 114, 128, 0.2);
+}
+
+/* ── Guide step – number circle ring on hover ──────────────── */
+.guide-step:hover .step-number {
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.3);
+}
+
+/* ── Tip card – subtle left accent border ───────────────────── */
+.tip-card {
+  position: relative;
+}
+
+.tip-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  bottom: 1rem;
+  width: 3px;
+  background: linear-gradient(to bottom, #4ade80, #16a34a);
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tip-card:hover::before {
+  opacity: 1;
+}
+
+/* ── CTA Banner decorative elements ────────────────────────── */
+.cta-banner__decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
+}
+
+.cta-banner__circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.cta-banner__circle--l {
+  width: 320px;
+  height: 320px;
+  bottom: -120px;
+  left: -80px;
+}
+
+.cta-banner__circle--r {
+  width: 200px;
+  height: 200px;
+  top: -60px;
+  right: 15%;
+}
+
+/* ── Reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .fade-in-right { animation: none; }
+
+  .tip-card::before { transition: none; }
+}

@@ -1,0 +1,112 @@
+/* ============================================================
+  PROBLEM PAGE – Component Styles
+  Tailwind handles layout, color, and spacing utilities.
+  This file adds:
+    - Hero overlay gradient
+    - Fade-in entrance animations
+    - Problem card glow border on hover
+    - Impact stat count-up highlight line
+    - CTA banner diagonal decoration
+    - prefers-reduced-motion guard
+  ============================================================ */
+
+/* ── Hero decorative dark overlay ──────────────────────────── */
+.problem-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ── Entrance animations ───────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in-up    { animation: fadeInUp    0.7s ease both; }
+.fade-in-right { animation: fadeInRight 0.7s ease 0.15s both; }
+
+/* ── Problem card – green glow border on hover ─────────────── */
+.problem-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #ef4444, #f97316) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.problem-card:hover::before { opacity: 1; }
+
+/* Large background number – sits behind content */
+.problem-card__num {
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+  font-size: 6rem;
+  line-height: 1;
+  color: #f3f4f6;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── Impact stat – accent underline on the value ───────────── */
+.impact-stat dt {
+  position: relative;
+  display: inline-block;
+}
+
+.impact-stat dt::after {
+  content: '';
+  display: block;
+  width: 40%;
+  height: 3px;
+  background: currentColor;
+  opacity: 0.35;
+  border-radius: 999px;
+  margin: 0.4rem auto 0;
+}
+
+/* ── Cause item – step number absolute positioning fix ─────── */
+.cause-item {
+  margin-top: 1rem; /* room for the step badge that overflows top */
+}
+
+/* ── CTA Banner decorative diagonal ──────────────────────── */
+.cta-banner__decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
+}
+
+/* ── Reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .fade-in-right { animation: none; }
+
+  .problem-card::before { transition: none; }
+}

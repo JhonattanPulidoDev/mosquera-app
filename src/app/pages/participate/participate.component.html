@@ -1,0 +1,370 @@
+<!-- ============================================================
+  PÁGINA DE PARTICIPACIÓN CIUDADANA
+  Secciones:
+    1. Hero
+    2. Acciones principales (2 tarjetas grandes)
+    3. Sección informativa – ¿Por qué participar?
+    4. Call to Action final
+  Idioma: Español (es-CO)
+  ============================================================ -->
+
+<!-- ══════════════════════════════════════════════════════════
+  1. HERO
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="participate-hero relative overflow-hidden bg-gradient-to-br from-green-700 via-green-800 to-emerald-900"
+  aria-labelledby="participate-hero-heading"
+>
+  <!-- Patrón de puntos decorativo -->
+  <span class="participate-hero__dots" aria-hidden="true"></span>
+  <!-- Círculos decorativos -->
+  <span class="participate-hero__circle participate-hero__circle--tl" aria-hidden="true"></span>
+  <span class="participate-hero__circle participate-hero__circle--br" aria-hidden="true"></span>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Texto -->
+      <div class="fade-in-up">
+        <!-- Badge -->
+        <span
+          class="inline-flex items-center gap-1.5 bg-white/10 text-white text-xs font-semibold
+                 px-3 py-1 rounded-full mb-5 tracking-wide uppercase border border-white/20"
+        >
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+          </svg>
+          Participación ciudadana
+        </span>
+
+        <h1
+          id="participate-hero-heading"
+          class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6"
+        >
+          Participa y Genera
+          <span class="text-green-300"> un Cambio</span>
+        </h1>
+
+        <p class="text-lg text-green-100 leading-relaxed max-w-lg mb-10">
+          Tu participación es clave para mejorar nuestro entorno. Ayúdanos respondiendo
+          una encuesta o reportando puntos críticos en tu comunidad.
+        </p>
+
+        <!-- Mini CTAs de acceso rápido -->
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="https://example.com/survey"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-white text-green-700 font-bold
+                   px-6 py-3 rounded-xl shadow-lg hover:bg-green-50
+                   transition-all duration-200 hover:-translate-y-0.5
+                   focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700"
+            aria-label="Ir a la encuesta ciudadana (abre en nueva pestaña)"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+            Encuesta
+          </a>
+          <a
+            href="https://example.com/report"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 border-2 border-white/60 text-white font-semibold
+                   px-6 py-3 rounded-xl hover:bg-white/10
+                   transition-all duration-200 hover:-translate-y-0.5
+                   focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700"
+            aria-label="Reportar un punto crítico (abre en nueva pestaña)"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Reportar
+          </a>
+        </div>
+      </div>
+
+      <!-- Imagen -->
+      <div class="fade-in-right flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-lg">
+          <div class="absolute -inset-2 rounded-2xl bg-white/10 blur-2xl" aria-hidden="true"></div>
+          <img
+            src="https://picsum.photos/800/400?random=60"
+            alt="Ciudadanos participando activamente en la gestión ambiental de Mosquera"
+            class="relative w-full rounded-2xl shadow-2xl object-cover border border-white/10"
+            width="800"
+            height="400"
+            loading="eager"
+          />
+          <!-- Chip de participantes -->
+          <div
+            class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg px-4 py-3
+                   flex items-center gap-3 border border-gray-100"
+            aria-hidden="true"
+          >
+            <div class="flex -space-x-2">
+              @for (i of [1, 2, 3]; track i) {
+                <div class="w-8 h-8 rounded-full bg-green-200 border-2 border-white flex items-center justify-center text-green-700 text-xs font-bold">
+                  {{ i }}
+                </div>
+              }
+            </div>
+            <div>
+              <p class="text-xs text-gray-500">Ya participaron</p>
+              <p class="text-sm font-bold text-gray-800">+1,200 ciudadanos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  2. ACCIONES PRINCIPALES – 2 tarjetas grandes
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="actions py-20 bg-gray-50"
+  aria-labelledby="actions-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-14">
+      <span class="text-green-600 text-sm font-semibold uppercase tracking-widest">¿Cómo participar?</span>
+      <h2
+        id="actions-heading"
+        class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900"
+      >
+        Elige tu forma de contribuir
+      </h2>
+      <p class="mt-4 text-gray-500 max-w-xl mx-auto">
+        Tenemos dos formas sencillas de que hagas parte del cambio.
+        Ambas son rápidas, fáciles y tienen un impacto real.
+      </p>
+      <div class="mt-6 flex justify-center">
+        <span class="inline-block w-12 h-1 rounded-full bg-green-500"></span>
+      </div>
+    </div>
+
+    <!-- Tarjetas de acción -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      @for (action of actions; track action.title) {
+        <article
+          [class]="'action-card bg-white rounded-3xl border-2 p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ' + action.accentClass"
+        >
+          <div class="flex flex-col h-full">
+
+            <!-- Encabezado de la tarjeta -->
+            <div class="flex items-start gap-5 mb-6">
+              <!-- Ícono -->
+              <div
+                [class]="'w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-md ' + action.iconBg"
+                aria-hidden="true"
+              >
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="action.icon"/>
+                </svg>
+              </div>
+
+              <div>
+                <!-- Etiqueta -->
+                <span [class]="'inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-2 ' + action.tagClass">
+                  {{ action.tag }}
+                </span>
+                <h3 class="text-2xl font-extrabold text-gray-900 leading-tight">{{ action.title }}</h3>
+              </div>
+            </div>
+
+            <!-- Descripción -->
+            <p class="text-gray-600 leading-relaxed mb-6">{{ action.description }}</p>
+
+            <!-- Lista de características -->
+            <ul class="space-y-3 mb-8 flex-1" role="list">
+              @for (feat of action.features; track feat) {
+                <li class="flex items-center gap-3 text-sm text-gray-700">
+                  <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"/>
+                  </svg>
+                  {{ feat }}
+                </li>
+              }
+            </ul>
+
+            <!-- Botón CTA -->
+            <a
+              [href]="action.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [class]="'action-btn w-full flex items-center justify-center gap-3 font-bold px-6 py-4 rounded-2xl shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 ' + action.buttonClass"
+              [attr.aria-label]="action.buttonLabel + ' (abre en nueva pestaña)'"
+            >
+              {{ action.buttonLabel }}
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  3. SECCIÓN INFORMATIVA – ¿Por qué es importante?
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="why-participate py-20 bg-white"
+  aria-labelledby="why-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Texto principal -->
+      <div>
+        <span class="text-green-600 text-sm font-semibold uppercase tracking-widest">Impacto ciudadano</span>
+        <h2
+          id="why-heading"
+          class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-6"
+        >
+          ¿Por qué es importante
+          <span class="text-green-600"> tu participación?</span>
+        </h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+          La colaboración ciudadana permite identificar problemas reales, priorizar
+          soluciones y generar un impacto positivo en el medio ambiente.
+        </p>
+
+        <!-- Estadísticas rápidas -->
+        <div class="grid grid-cols-2 gap-6">
+          @for (kpi of [
+            { value: '1.2k+', label: 'Ciudadanos activos' },
+            { value: '87',    label: 'Puntos reportados' },
+            { value: '3',     label: 'Encuestas completadas' },
+            { value: '94 %',  label: 'Satisfacción' }
+          ]; track kpi.label) {
+            <div class="bg-gray-50 border border-gray-100 rounded-2xl px-5 py-4">
+              <p class="text-2xl font-extrabold text-green-600">{{ kpi.value }}</p>
+              <p class="text-xs text-gray-500 mt-0.5">{{ kpi.label }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Razones grid -->
+      <div class="space-y-5">
+        @for (reason of reasons; track reason.title; let i = $index) {
+          <div
+            class="reason-item flex items-start gap-5 bg-gray-50 border border-gray-100
+                   rounded-2xl p-5 hover:border-green-200 hover:bg-green-50/50
+                   transition-all duration-300"
+          >
+            <!-- Número + ícono -->
+            <div class="relative shrink-0">
+              <div
+                class="w-12 h-12 bg-green-600 text-white rounded-xl flex items-center justify-center shadow-md"
+                aria-hidden="true"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="reason.icon"/>
+                </svg>
+              </div>
+              <span
+                class="absolute -top-2 -right-2 w-5 h-5 bg-white border-2 border-green-600
+                       rounded-full text-green-700 text-[10px] font-extrabold
+                       flex items-center justify-center"
+                aria-hidden="true"
+              >{{ i + 1 }}</span>
+            </div>
+
+            <div>
+              <h3 class="text-base font-bold text-gray-900 mb-1">{{ reason.title }}</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">{{ reason.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  4. CALL TO ACTION FINAL
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="cta-banner relative overflow-hidden bg-green-700 py-20"
+  aria-labelledby="participate-cta-heading"
+>
+  <!-- Forma decorativa diagonal -->
+  <span class="cta-banner__decor" aria-hidden="true"></span>
+  <!-- Blob circular -->
+  <span class="cta-banner__blob" aria-hidden="true"></span>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+
+    <!-- Ícono central -->
+    <div
+      class="w-20 h-20 bg-white/10 border border-white/20 rounded-full
+             flex items-center justify-center mx-auto mb-6"
+      aria-hidden="true"
+    >
+      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+      </svg>
+    </div>
+
+    <h2
+      id="participate-cta-heading"
+      class="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-5"
+    >
+      Tu voz cuenta
+    </h2>
+    <p class="text-green-100 text-xl mb-10 max-w-xl mx-auto">
+      Cada acción suma para construir un entorno más limpio y sostenible.
+    </p>
+
+    <!-- Botones finales -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a
+        href="https://example.com/survey"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-3 bg-white text-green-700 font-bold
+               px-8 py-4 rounded-xl shadow-lg hover:bg-green-50
+               transition-all duration-200 hover:-translate-y-1 hover:shadow-xl
+               focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700"
+        aria-label="Responder encuesta (abre en nueva pestaña)"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+        </svg>
+        Responder encuesta
+      </a>
+      <a
+        href="https://example.com/report"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-3 border-2 border-white text-white font-bold
+               px-8 py-4 rounded-xl hover:bg-white hover:text-green-700
+               transition-all duration-200 hover:-translate-y-1
+               focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700"
+        aria-label="Hacer un reporte de punto crítico (abre en nueva pestaña)"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        Hacer un reporte
+      </a>
+    </div>
+  </div>
+</section>

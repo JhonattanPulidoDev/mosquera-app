@@ -1,0 +1,145 @@
+/* ============================================================
+  PARTICIPATE PAGE – Component Styles
+  Tailwind handles layout, colors, and spacing.
+  This file adds:
+    - Hero pattern overlay and decorative circles
+    - Fade-in entrance animations
+    - Action card shimmer/glow border on hover
+    - Reason item left accent on hover
+    - CTA banner diagonal decoration and blob
+    - prefers-reduced-motion guard
+  ============================================================ */
+
+/* ── Hero dot pattern overlay ──────────────────────────────── */
+.participate-hero__dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.participate-hero__circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.participate-hero__circle--tl {
+  width: 400px;
+  height: 400px;
+  top: -180px;
+  left: -120px;
+}
+
+.participate-hero__circle--br {
+  width: 280px;
+  height: 280px;
+  bottom: -100px;
+  right: -60px;
+}
+
+/* ── Entrance animations ───────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in-up    { animation: fadeInUp    0.7s ease both; }
+.fade-in-right { animation: fadeInRight 0.7s ease 0.15s both; }
+
+/* ── Action card – shimmer top border on hover ─────────────── */
+.action-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.action-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4ade80, #16a34a, #4ade80);
+  background-size: 200% 100%;
+  border-radius: 999px 999px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.action-card:hover::after {
+  opacity: 1;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Action button – ensure focus ring color matches card ─── */
+.action-btn:focus {
+  outline: none;
+  ring-color: currentColor;
+}
+
+/* ── Reason item – left accent bar on hover ──────────────── */
+.reason-item {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.reason-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  width: 3px;
+  background: linear-gradient(to bottom, #4ade80, #16a34a);
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.reason-item:hover::before {
+  opacity: 1;
+}
+
+/* ── CTA Banner decorative elements ────────────────────────── */
+.cta-banner__decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
+}
+
+.cta-banner__blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  width: 360px;
+  height: 360px;
+  bottom: -140px;
+  left: -80px;
+  pointer-events: none;
+}
+
+/* ── Reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .fade-in-right   { animation: none; }
+  .action-card::after { animation: none; transition: none; }
+  .reason-item::before { transition: none; }
+}

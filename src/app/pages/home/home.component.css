@@ -1,0 +1,125 @@
+/* ============================================================
+  HOME PAGE – Component Styles
+  Tailwind handles layout, color, spacing.
+  This file covers:
+    - Decorative elements (circles, diagonal shape)
+    - Fade-in / slide-up entrance animations
+    - Feature card hover state complementing Tailwind's hover utilities
+    - Dashboard card glow effect
+  ============================================================ */
+
+/* ── Hero decorative background circles ────────────────────── */
+.hero {
+  position: relative;
+}
+
+.hero__circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a7f3d0 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__circle--lg {
+  width: 500px;
+  height: 500px;
+  top: -150px;
+  right: -150px;
+  opacity: 0.35;
+}
+
+.hero__circle--sm {
+  width: 280px;
+  height: 280px;
+  bottom: -80px;
+  left: -80px;
+  opacity: 0.25;
+}
+
+/* ── Entrance animations ───────────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease both;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.7s ease 0.15s both;
+}
+
+/* ── Feature cards – glow border on hover ─────────────────── */
+.feature-card {
+  position: relative;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem; /* matches rounded-2xl */
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #4ade80, #16a34a) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* ── Dashboard preview – subtle inner glow ────────────────── */
+.dashboard-preview__card {
+  box-shadow:
+    0 0 0 1px rgba(74, 222, 128, 0.15),
+    0 25px 50px -12px rgba(0, 0, 0, 0.3);
+}
+
+/* ── CTA Banner decorative diagonal ──────────────────────── */
+.cta-banner__decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
+}
+
+/* ── Reduced motion: disable animations for accessibility ─── */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .fade-in-right {
+    animation: none;
+  }
+
+  .feature-card::before {
+    transition: none;
+  }
+}

@@ -1,0 +1,15 @@
+/* ============================================================
+  Footer Component Styles
+  Tailwind handles the majority of layout and color.
+  This file adds hover transitions for social buttons and
+  any overrides that utility classes cannot express cleanly.
+  ============================================================ */
+
+/* Smooth scale effect on social icon buttons */
+.footer__social-btn {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.footer__social-btn:hover {
+  transform: translateY(-2px);
+}

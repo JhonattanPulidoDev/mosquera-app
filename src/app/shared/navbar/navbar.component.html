@@ -1,0 +1,108 @@
+<!-- ============================================================
+  Navbar Component
+  - Sticky top navigation bar with green branding
+  - Desktop: horizontal links | Mobile: hamburger + slide-down menu
+  - Accessibility: landmark roles, aria-labels, keyboard-reachable
+  ============================================================ -->
+<header class="sticky top-0 z-50 shadow-md" role="banner">
+  <nav
+    class="navbar bg-[#2e7d32] px-4 sm:px-6 py-3"
+    aria-label="Navegación principal"
+  >
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+      <!-- ── Logo ── -->
+      <a
+        routerLink="/"
+        class="navbar__logo flex items-center gap-2 text-white font-bold text-xl tracking-widest no-underline
+               focus:outline-none focus:ring-2 focus:ring-white/60 rounded-md px-1"
+        aria-label="Mosquera Recicla – Ir al inicio"
+        (click)="closeMenu()"
+      >
+        <img
+          src="/icons/mosquera-recicla.png"
+          alt=""
+          class="w-8 h-8 shrink-0 object-contain"
+          aria-hidden="true"
+        />
+        <span class="flex flex-col leading-tight text-left">
+          <span class="text-base font-extrabold tracking-widest">MOSQUERA</span>
+          <span class="text-xs font-semibold tracking-[0.2em] text-green-200">RECICLA</span>
+        </span>
+      </a>
+
+      <!-- ── Desktop Navigation Links ── -->
+      <ul
+        class="navbar__menu hidden md:flex items-center gap-0.5 list-none m-0 p-0"
+        role="list"
+      >
+        @for (link of navLinks; track link.path) {
+          <li>
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="navbar__link--active"
+              [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+              class="navbar__link block text-white/90 px-3 py-2 rounded-md text-sm font-medium
+                     transition-colors duration-200 hover:bg-white/20 hover:text-white
+                     focus:outline-none focus:ring-2 focus:ring-white/50"
+              (click)="closeMenu()"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+
+      <!-- ── Hamburger Button (Mobile only) ── -->
+      <button
+        class="navbar__hamburger md:hidden text-white p-2 rounded-md
+               hover:bg-white/20 transition-colors duration-200
+               focus:outline-none focus:ring-2 focus:ring-white/50"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-controls="mobile-menu"
+        aria-label="Abrir o cerrar el menú de navegación"
+        type="button"
+      >
+        @if (isMenuOpen()) {
+          <!-- X / close icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        } @else {
+          <!-- Hamburger icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        }
+      </button>
+    </div>
+
+    <!-- ── Mobile Menu ── -->
+    <div
+      id="mobile-menu"
+      class="navbar__mobile-menu md:hidden overflow-hidden transition-all duration-300"
+      [class.navbar__mobile-menu--open]="isMenuOpen()"
+      role="region"
+      aria-label="Menú de navegación móvil"
+    >
+      <ul class="flex flex-col gap-1 pt-2 pb-3 list-none m-0 p-0" role="list">
+        @for (link of navLinks; track link.path) {
+          <li>
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="navbar__link--active"
+              [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+              class="navbar__link block text-white/90 px-3 py-2 rounded-md text-sm font-medium
+                     transition-colors duration-200 hover:bg-white/20 hover:text-white
+                     focus:outline-none focus:ring-2 focus:ring-white/50"
+              (click)="closeMenu()"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </nav>
+</header>

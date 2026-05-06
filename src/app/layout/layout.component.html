@@ -1,0 +1,35 @@
+<!-- ============================================================
+  Layout Component
+  Application shell: Navbar → page content → Footer
+  Uses flex column + min-h-screen so the footer is always
+  pushed to the bottom, even on short pages.
+  ============================================================ -->
+<div class="layout flex flex-col min-h-screen">
+
+  <!-- Persistent top navigation -->
+  <app-navbar />
+
+  <!-- Skip-to-content anchor for keyboard/screen-reader users -->
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100]
+           focus:bg-white focus:text-[#2e7d32] focus:font-semibold focus:px-4 focus:py-2
+           focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2e7d32]"
+  >
+    Saltar al contenido principal
+  </a>
+
+  <!-- Routed page content -->
+  <main
+    id="main-content"
+    class="flex-1"
+    role="main"
+    tabindex="-1"
+  >
+    <router-outlet />
+  </main>
+
+  <!-- Persistent footer -->
+  <app-footer />
+
+</div>

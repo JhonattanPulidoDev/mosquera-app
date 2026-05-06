@@ -1,0 +1,11 @@
+/* ============================================================
+  Layout Component Styles
+  Minimal — layout structure is handled by Tailwind utilities.
+  Add page-transition animations or global page padding here
+  if needed in the future.
+  ============================================================ */
+
+/* Smooth scroll for in-page anchors */
+:host {
+  scroll-behavior: smooth;
+}

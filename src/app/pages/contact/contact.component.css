@@ -1,0 +1,104 @@
+/* ============================================================
+  CONTACT PAGE – Component Styles
+  Tailwind handles layout, colors, and spacing.
+  This file adds:
+    - Hero blobs
+    - Fade-in entrance animations
+    - Team card glow border on hover
+    - Contact item left accent on hover
+    - prefers-reduced-motion guard
+  ============================================================ */
+
+/* ── Hero decorative blobs ──────────────────────────────────── */
+.contact-hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(64px);
+}
+
+.contact-hero__blob--tl {
+  width: 380px;
+  height: 380px;
+  top: -130px;
+  left: -110px;
+  background: radial-gradient(circle, #bbf7d0 0%, transparent 70%);
+  opacity: 0.55;
+}
+
+.contact-hero__blob--br {
+  width: 260px;
+  height: 260px;
+  bottom: -70px;
+  right: -60px;
+  background: radial-gradient(circle, #a7f3d0 0%, transparent 70%);
+  opacity: 0.4;
+}
+
+/* ── Entrance animations ───────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in-up    { animation: fadeInUp    0.7s ease both; }
+.fade-in-right { animation: fadeInRight 0.7s ease 0.15s both; }
+
+/* ── Team card – green glow border on hover ─────────────────── */
+.team-card {
+  position: relative;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #4ade80, #16a34a) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.team-card:hover::before { opacity: 1; }
+
+/* ── Contact item – top accent border on hover ─────────────── */
+.contact-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4ade80, #16a34a);
+  border-radius: 999px 999px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-item:hover::after { opacity: 1; }
+
+/* ── Reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .fade-in-right { animation: none; }
+
+  .team-card::before,
+  .contact-item::after { transition: none; }
+}

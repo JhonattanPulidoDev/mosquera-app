@@ -1,0 +1,350 @@
+<!-- ============================================================
+  HOME PAGE
+  Sections (in order):
+    1. Hero
+    2. Stats band
+    3. Key Features
+    4. Problem Awareness
+    5. Dashboard Preview
+    6. Call to Action
+  ============================================================ -->
+
+<!-- ══════════════════════════════════════════════════════════
+  1. HERO SECTION
+  Two-column layout: text (left) + illustration (right)
+  Stacks to single column on mobile
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="hero relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-emerald-50"
+  aria-labelledby="hero-heading"
+>
+  <!-- Decorative background circles -->
+  <span class="hero__circle hero__circle--lg" aria-hidden="true"></span>
+  <span class="hero__circle hero__circle--sm" aria-hidden="true"></span>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- ── Left: Copy ── -->
+      <div class="hero__copy order-2 lg:order-1 fade-in-up">
+        <!-- Badge pill -->
+        <span
+          class="inline-flex items-center gap-1.5 bg-green-100 text-green-800 text-xs font-semibold
+                 px-3 py-1 rounded-full mb-5 tracking-wide uppercase"
+        >
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
+          </svg>
+          Mosquera Sostenible
+        </span>
+
+        <h1
+          id="hero-heading"
+          class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6"
+        >
+          Juntos por una
+          <span class="text-green-600"> Mosquera</span>
+          <br />más limpia y verde
+        </h1>
+
+        <p class="text-lg text-gray-600 leading-relaxed mb-8 max-w-lg">
+          Plataforma ciudadana para la gestión ambiental, el reciclaje
+          inteligente y la participación comunitaria en el municipio de
+          Mosquera, Cundinamarca.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4">
+          <a
+            routerLink="/participate"
+            class="cta-primary inline-flex items-center gap-2 bg-green-600 hover:bg-green-700
+                   text-white font-semibold px-7 py-3.5 rounded-xl shadow-md
+                   transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg
+                   focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/>
+            </svg>
+            Participa Ahora
+          </a>
+
+          <a
+            routerLink="/dashboard"
+            class="cta-secondary inline-flex items-center gap-2 border-2 border-green-600
+                   text-green-700 hover:bg-green-600 hover:text-white font-semibold
+                   px-7 py-3.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5
+                   focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+            Ver Dashboard
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Right: Illustration ── -->
+      <div class="hero__image order-1 lg:order-2 flex justify-center lg:justify-end fade-in-right">
+        <div class="relative">
+          <!-- Decorative ring behind image -->
+          <div
+            class="absolute -inset-4 rounded-3xl bg-green-200/40 blur-2xl"
+            aria-hidden="true"
+          ></div>
+          <img
+            src="/img/home/home_1.jpeg"
+            alt="Ciudad verde y sostenible – ilustración ambiental"
+            class="relative w-full max-w-lg lg:max-w-full rounded-2xl shadow-2xl object-cover"
+            width="600"
+            height="420"
+            loading="eager"
+          />
+          <!-- Floating badge -->
+          <div
+            class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg px-4 py-3
+                   flex items-center gap-3 border border-gray-100"
+            aria-hidden="true"
+          >
+            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                      d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500">Municipio comprometido</p>
+              <p class="text-sm font-semibold text-gray-800">Meta 2026 ✓</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  2. STATS BAND
+  Four key figures in a horizontal scrollable strip
+  ══════════════════════════════════════════════════════════ -->
+<section class="stats-band bg-green-700 py-10" aria-label="Cifras clave del problema ambiental">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <dl class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      @for (stat of stats; track stat.label) {
+        <div class="stat-item text-center">
+          <dt class="text-3xl sm:text-4xl font-extrabold text-white mb-1">{{ stat.value }}</dt>
+          <dd class="text-sm sm:text-base text-green-200">{{ stat.label }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  3. KEY FEATURES SECTION
+  4-card grid with icon, title, description and hover lift
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="features py-20 bg-white"
+  aria-labelledby="features-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-14">
+      <span class="text-green-600 text-sm font-semibold uppercase tracking-widest">Lo que ofrecemos</span>
+      <h2
+        id="features-heading"
+        class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900"
+      >
+        Herramientas para un futuro sostenible
+      </h2>
+      <p class="mt-4 text-gray-500 max-w-xl mx-auto">
+        Una plataforma integral que conecta a los ciudadanos con la información,
+        la educación y las acciones necesarias para cuidar el medio ambiente.
+      </p>
+      <!-- Divider accent -->
+      <div class="mt-6 flex justify-center">
+        <span class="inline-block w-12 h-1 rounded-full bg-green-500"></span>
+      </div>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      @for (card of features; track card.title) {
+        <article
+          class="feature-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6
+                 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl
+                 focus-within:ring-2 focus-within:ring-green-500"
+        >
+          <!-- Icon badge -->
+          <div
+            [class]="'feature-card__icon w-12 h-12 rounded-xl flex items-center justify-center mb-5 ' + card.color"
+            aria-hidden="true"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="card.icon"/>
+            </svg>
+          </div>
+
+          <h3 class="text-base font-bold text-gray-900 mb-2">{{ card.title }}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">{{ card.description }}</p>
+
+          <!-- Read-more link -->
+          <a
+            [routerLink]="card.route"
+            class="mt-4 inline-flex items-center gap-1 text-green-600 text-sm font-semibold
+                   hover:gap-2 transition-all duration-200
+                   focus:outline-none focus:underline"
+            [attr.aria-label]="'Saber más sobre ' + card.title"
+          >
+            Saber más
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  4. PROBLEM AWARENESS SECTION
+  Two-column layout: image (left) | text + CTA (right)
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="problem bg-gray-50 py-20"
+  aria-labelledby="problem-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Left: image with decorative accent -->
+      <div class="problem__image-wrap relative">
+        <!-- Accent block behind image -->
+        <div
+          class="absolute -bottom-4 -left-4 w-2/3 h-2/3 bg-green-100 rounded-2xl -z-10"
+          aria-hidden="true"
+        ></div>
+        <img
+          src="/img/home/home_2.jpeg"
+          alt="Residuos sólidos en calles del municipio de Mosquera"
+          class="w-full rounded-2xl shadow-lg object-cover"
+          width="500"
+          height="420"
+          loading="lazy"
+        />
+        <!-- Overlay stat chip -->
+        <div
+          class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold
+                 px-3 py-1.5 rounded-lg shadow"
+          aria-hidden="true"
+        >
+          ⚠️ Situación Crítica
+        </div>
+      </div>
+
+      <!-- Right: copy -->
+      <div class="problem__copy">
+        <span class="text-green-600 text-sm font-semibold uppercase tracking-widest">El Problema</span>
+        <h2
+          id="problem-heading"
+          class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-6"
+        >
+          Mosquera enfrenta una crisis de residuos sólidos
+        </h2>
+
+        <!-- Paragraph blocks -->
+        <div class="space-y-4 text-gray-600 text-base leading-relaxed mb-8">
+          <p>
+            El municipio genera más de <strong class="text-gray-900">270,000 toneladas</strong> de residuos
+            al año. Solo un <strong class="text-gray-900">10 %</strong> es correctamente clasificado, mientras
+            que el resto termina en rellenos sanitarios, cuerpos de agua o espacios públicos.
+          </p>
+          <p>
+            La falta de educación ambiental y de infraestructura de reciclaje impide que los
+            ciudadanos adopten prácticas sostenibles, agravando la contaminación y el deterioro
+            de los ecosistemas locales.
+          </p>
+        </div>
+
+        <!-- Highlight list -->
+        <ul class="space-y-3 mb-8" role="list">
+          @for (item of ['Contaminación de fuentes hídricas', 'Acumulación en zonas residenciales', 'Insuficientes puntos de recolección']; track item) {
+            <li class="flex items-center gap-3 text-gray-700 text-sm">
+              <span
+                class="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center shrink-0"
+                aria-hidden="true"
+              >
+                <svg class="w-3 h-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"/>
+                </svg>
+              </span>
+              {{ item }}
+            </li>
+          }
+        </ul>
+
+        <a
+          routerLink="/problem"
+          class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white
+                 font-semibold px-6 py-3 rounded-xl shadow transition-all duration-200
+                 hover:-translate-y-0.5 hover:shadow-lg
+                 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+        >
+          Conocer más sobre el problema
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  6. CALL TO ACTION BANNER
+  Full-width green section with engagement message + button
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="cta-banner relative overflow-hidden bg-green-700 py-20"
+  aria-labelledby="cta-heading"
+>
+  <!-- Decorative diagonal shape -->
+  <span class="cta-banner__decor" aria-hidden="true"></span>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+    <h2
+      id="cta-heading"
+      class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-6"
+    >
+      Tu participación cambia<br class="hidden sm:block" /> el futuro de Mosquera
+    </h2>
+    <p class="text-green-100 text-lg mb-10 max-w-2xl mx-auto">
+      Únete a los más de 63,500 ciudadanos que ya están tomando acción.
+      Reporta, aprende, recicla y participa en la construcción de un
+      municipio más sostenible.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a
+        routerLink="/participate"
+        class="inline-flex items-center gap-2 bg-white text-green-700 font-bold
+               px-8 py-4 rounded-xl shadow-lg hover:bg-green-50
+               transition-all duration-200 hover:-translate-y-1 hover:shadow-xl
+               focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+        </svg>
+        Comienza a Participar
+      </a>      
+    </div>
+  </div>
+</section>

@@ -1,0 +1,356 @@
+<!-- ============================================================
+  PÁGINA DE EDUCACIÓN AMBIENTAL
+  Secciones:
+    1. Hero
+    2. Clasificación de residuos (3 tarjetas)
+    3. Guía visual – Cómo separar (4 pasos)
+    4. Consejos prácticos (4 tips)
+    5. Call to Action
+  Idioma: Español (es-CO)
+  ============================================================ -->
+
+<!-- ══════════════════════════════════════════════════════════
+  1. HERO
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="edu-hero relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-emerald-50"
+  aria-labelledby="edu-hero-heading"
+>
+  <!-- Decorative blobs -->
+  <span class="edu-hero__blob edu-hero__blob--tl" aria-hidden="true"></span>
+  <span class="edu-hero__blob edu-hero__blob--br" aria-hidden="true"></span>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Texto -->
+      <div class="fade-in-up">
+        <span
+          class="inline-flex items-center gap-1.5 bg-green-100 text-green-800 text-xs font-semibold
+                 px-3 py-1 rounded-full mb-5 tracking-wide uppercase"
+        >
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
+          </svg>
+          Educación Ambiental
+        </span>
+
+        <h1
+          id="edu-hero-heading"
+          class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6"
+        >
+          Aprende a Separar
+          <span class="text-green-600"> Correctamente</span>
+          <br class="hidden sm:block" /> los Residuos
+        </h1>
+
+        <p class="text-lg text-gray-600 leading-relaxed max-w-lg">
+          La correcta separación de residuos es clave para reducir la contaminación
+          y facilitar el reciclaje. Con pequeñas acciones podemos generar un gran
+          impacto en nuestro entorno.
+        </p>
+
+        <!-- Indicador de desplazamiento -->
+        <div class="mt-10 flex items-center gap-3 text-gray-400 text-sm">
+          <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+          Desplázate para aprender más
+        </div>
+      </div>
+
+      <!-- Imagen ilustrativa -->
+      <div class="fade-in-right flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-lg">
+          <div class="absolute -inset-3 rounded-3xl bg-green-200/40 blur-2xl" aria-hidden="true"></div>
+          <img
+            src="https://picsum.photos/800/400?random=50"
+            alt="Contenedores de colores para la separación correcta de residuos"
+            class="relative w-full rounded-2xl shadow-2xl object-cover"
+            width="800"
+            height="400"
+            loading="eager"
+          />
+          <!-- Chip flotante -->
+          <div
+            class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg px-4 py-3
+                   flex items-center gap-3 border border-gray-100"
+            aria-hidden="true"
+          >
+            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                      d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500">Contenido educativo</p>
+              <p class="text-sm font-semibold text-gray-800">Guía práctica</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  2. CLASIFICACIÓN DE RESIDUOS – 3 tarjetas
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="waste-categories py-20 bg-white"
+  aria-labelledby="categories-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-14">
+      <span class="text-green-600 text-sm font-semibold uppercase tracking-widest">Tipos de Residuos</span>
+      <h2
+        id="categories-heading"
+        class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900"
+      >
+        Clasificación de Residuos
+      </h2>
+      <p class="mt-4 text-gray-500 max-w-xl mx-auto">
+        Conocer los tipos de residuos es el primer paso para separar correctamente
+        y contribuir a un municipio más limpio.
+      </p>
+      <div class="mt-6 flex justify-center">
+        <span class="inline-block w-12 h-1 rounded-full bg-green-500"></span>
+      </div>
+    </div>
+
+    <!-- Tarjetas -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      @for (cat of categories; track cat.title) {
+        <article
+          [class]="'waste-card rounded-2xl border-2 p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ' + cat.colorClasses"
+        >
+          <!-- Badge de color (encabezado de la tarjeta) -->
+          <div
+            [class]="'inline-flex items-center gap-2 text-white text-xs font-bold px-3 py-1.5 rounded-lg mb-5 ' + cat.badgeClass"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="cat.icon"/>
+            </svg>
+            {{ cat.title }}
+          </div>
+
+          <!-- Descripción -->
+          <p class="text-sm text-gray-600 leading-relaxed mb-5">{{ cat.description }}</p>
+
+          <!-- Lista de ejemplos -->
+          <div>
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Ejemplos</p>
+            <ul class="space-y-2 list-none m-0 p-0" role="list">
+              @for (example of cat.examples; track example) {
+                <li class="flex items-center gap-2 text-sm text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"/>
+                  </svg>
+                  {{ example }}
+                </li>
+              }
+            </ul>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  3. GUÍA VISUAL – Cómo Separar Correctamente (4 pasos)
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="separation-guide py-20 bg-gray-50"
+  aria-labelledby="guide-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-14">
+      <span class="text-green-600 text-sm font-semibold uppercase tracking-widest">Paso a Paso</span>
+      <h2
+        id="guide-heading"
+        class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900"
+      >
+        ¿Cómo Separar Correctamente?
+      </h2>
+      <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
+        Clasifica tus residuos en diferentes recipientes según su tipo. Usa bolsas o
+        contenedores adecuados para facilitar su recolección y reciclaje.
+      </p>
+      <div class="mt-6 flex justify-center">
+        <span class="inline-block w-12 h-1 rounded-full bg-green-500"></span>
+      </div>
+    </div>
+
+    <!-- Pasos – conectados con línea horizontal en desktop -->
+    <div class="relative">
+      <!-- Línea conectora (desktop only) -->
+      <div
+        class="hidden lg:block absolute top-10 left-0 right-0 h-0.5 bg-green-200 z-0"
+        style="margin: 0 8%;"
+        aria-hidden="true"
+      ></div>
+
+      <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10" role="list">
+        @for (step of steps; track step.step) {
+          <li class="guide-step bg-white rounded-2xl p-6 shadow-sm border border-gray-100
+                     hover:shadow-md transition-shadow duration-300 text-center">
+            <!-- Número de paso -->
+            <div
+              class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center
+                     text-lg font-extrabold mx-auto mb-5 shadow-md"
+              aria-hidden="true"
+            >{{ step.step }}</div>
+
+            <!-- Ícono -->
+            <div
+              class="w-11 h-11 bg-green-50 text-green-600 rounded-xl flex items-center justify-center mx-auto mb-4"
+              aria-hidden="true"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="step.icon"/>
+              </svg>
+            </div>
+
+            <h3 class="text-base font-bold text-gray-900 mb-2">{{ step.title }}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{{ step.detail }}</p>
+          </li>
+        }
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  4. CONSEJOS PRÁCTICOS – 4 tips
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="tips py-20 bg-white"
+  aria-labelledby="tips-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-14">
+      <span class="text-green-600 text-sm font-semibold uppercase tracking-widest">Recomendaciones</span>
+      <h2
+        id="tips-heading"
+        class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900"
+      >
+        Consejos Prácticos
+      </h2>
+      <p class="mt-4 text-gray-500 max-w-xl mx-auto">
+        Pequeños hábitos diarios marcan la diferencia. Aplica estos consejos en tu hogar y comunidad.
+      </p>
+      <div class="mt-6 flex justify-center">
+        <span class="inline-block w-12 h-1 rounded-full bg-green-500"></span>
+      </div>
+    </div>
+
+    <!-- Tips grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      @for (tip of tips; track tip.text; let i = $index) {
+        <div
+          class="tip-card bg-gray-50 border border-gray-100 rounded-2xl p-6
+                 hover:border-green-200 hover:bg-green-50/40 hover:-translate-y-1
+                 transition-all duration-300 shadow-sm"
+        >
+          <!-- Número -->
+          <span
+            class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-600
+                   text-white text-xs font-bold mb-4"
+            aria-hidden="true"
+          >{{ i + 1 }}</span>
+
+          <!-- Ícono badge -->
+          <div
+            [class]="'w-11 h-11 rounded-xl flex items-center justify-center mb-4 ' + tip.color"
+            aria-hidden="true"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="tip.icon"/>
+            </svg>
+          </div>
+
+          <p class="text-sm text-gray-700 leading-relaxed font-medium">{{ tip.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  5. CALL TO ACTION
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="cta-banner relative overflow-hidden bg-green-700 py-20"
+  aria-labelledby="edu-cta-heading"
+>
+  <!-- Forma decorativa diagonal -->
+  <span class="cta-banner__decor" aria-hidden="true"></span>
+
+  <!-- Círculos decorativos -->
+  <span class="cta-banner__circle cta-banner__circle--l" aria-hidden="true"></span>
+  <span class="cta-banner__circle cta-banner__circle--r" aria-hidden="true"></span>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+    <!-- Ícono -->
+    <div
+      class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6"
+      aria-hidden="true"
+    >
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+      </svg>
+    </div>
+
+    <h2
+      id="edu-cta-heading"
+      class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-6"
+    >
+      Pequeñas acciones generan
+      <br class="hidden sm:block" /> grandes cambios
+    </h2>
+    <p class="text-green-100 text-lg mb-10 max-w-2xl mx-auto">
+      Empieza hoy a separar tus residuos y contribuye a un futuro más sostenible.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a
+        routerLink="/map"
+        class="inline-flex items-center gap-2 bg-white text-green-700 font-bold
+               px-8 py-4 rounded-xl shadow-lg hover:bg-green-50
+               transition-all duration-200 hover:-translate-y-1 hover:shadow-xl
+               focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        Aprender más
+      </a>
+      <a
+        routerLink="/participate"
+        class="inline-flex items-center gap-2 border-2 border-white/60 text-white font-semibold
+               px-8 py-4 rounded-xl hover:bg-white/10
+               transition-all duration-200 hover:-translate-y-1
+               focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/>
+        </svg>
+        Participar
+      </a>
+    </div>
+  </div>
+</section>
