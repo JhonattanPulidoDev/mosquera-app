@@ -47,13 +47,13 @@
 
         <p class="text-lg text-green-100 leading-relaxed max-w-lg mb-10">
           Tu participación es clave para mejorar nuestro entorno. Ayúdanos respondiendo
-          una encuesta o reportando puntos críticos en tu comunidad.
+          una encuesta.
         </p>
 
         <!-- Mini CTAs de acceso rápido -->
         <div class="flex flex-wrap gap-4">
           <a
-            href="https://example.com/survey"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeRL6QDYx9SkrYKRGI6aPPC7MwAz9MXAP4oNyjf5VJC5ipHew/viewform"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 bg-white text-green-700 font-bold
@@ -68,22 +68,6 @@
             </svg>
             Encuesta
           </a>
-          <a
-            href="https://example.com/report"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 border-2 border-white/60 text-white font-semibold
-                   px-6 py-3 rounded-xl hover:bg-white/10
-                   transition-all duration-200 hover:-translate-y-0.5
-                   focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700"
-            aria-label="Reportar un punto crítico (abre en nueva pestaña)"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-            Reportar
-          </a>
         </div>
       </div>
 
@@ -92,7 +76,7 @@
         <div class="relative w-full max-w-lg">
           <div class="absolute -inset-2 rounded-2xl bg-white/10 blur-2xl" aria-hidden="true"></div>
           <img
-            src="https://picsum.photos/800/400?random=60"
+            src="/img/participate/participate_1.jpg"
             alt="Ciudadanos participando activamente en la gestión ambiental de Mosquera"
             class="relative w-full rounded-2xl shadow-2xl object-cover border border-white/10"
             width="800"
@@ -114,7 +98,7 @@
             </div>
             <div>
               <p class="text-xs text-gray-500">Ya participaron</p>
-              <p class="text-sm font-bold text-gray-800">+1,200 ciudadanos</p>
+              <p class="text-sm font-bold text-gray-800">+40 ciudadanos</p>
             </div>
           </div>
         </div>
@@ -142,8 +126,8 @@
         Elige tu forma de contribuir
       </h2>
       <p class="mt-4 text-gray-500 max-w-xl mx-auto">
-        Tenemos dos formas sencillas de que hagas parte del cambio.
-        Ambas son rápidas, fáciles y tienen un impacto real.
+        Tenemos una forma sencilla de que hagas parte del cambio.
+        Es rápida, fácil y tienen un impacto real.
       </p>
       <div class="mt-6 flex justify-center">
         <span class="inline-block w-12 h-1 rounded-full bg-green-500"></span>
@@ -151,7 +135,7 @@
     </div>
 
     <!-- Tarjetas de acción -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-1 gap-8">
       @for (action of actions; track action.title) {
         <article
           [class]="'action-card bg-white rounded-3xl border-2 p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ' + action.accentClass"
@@ -245,10 +229,8 @@
         <!-- Estadísticas rápidas -->
         <div class="grid grid-cols-2 gap-6">
           @for (kpi of [
-            { value: '1.2k+', label: 'Ciudadanos activos' },
-            { value: '87',    label: 'Puntos reportados' },
-            { value: '3',     label: 'Encuestas completadas' },
-            { value: '94 %',  label: 'Satisfacción' }
+            { value: '40+', label: 'Ciudadanos activos' },
+            { value: '40',     label: 'Encuestas completadas' },
           ]; track kpi.label) {
             <div class="bg-gray-50 border border-gray-100 rounded-2xl px-5 py-4">
               <p class="text-2xl font-extrabold text-green-600">{{ kpi.value }}</p>
@@ -334,7 +316,7 @@
     <!-- Botones finales -->
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <a
-        href="https://example.com/survey"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeRL6QDYx9SkrYKRGI6aPPC7MwAz9MXAP4oNyjf5VJC5ipHew/viewform"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center gap-3 bg-white text-green-700 font-bold
@@ -348,22 +330,6 @@
                 d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
         </svg>
         Responder encuesta
-      </a>
-      <a
-        href="https://example.com/report"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-3 border-2 border-white text-white font-bold
-               px-8 py-4 rounded-xl hover:bg-white hover:text-green-700
-               transition-all duration-200 hover:-translate-y-1
-               focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700"
-        aria-label="Hacer un reporte de punto crítico (abre en nueva pestaña)"
-      >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-        </svg>
-        Hacer un reporte
       </a>
     </div>
   </div>

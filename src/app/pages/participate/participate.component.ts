@@ -43,29 +43,11 @@ export class ParticipateComponent {
         'Comparte tu opinión sobre la gestión de residuos en tu comunidad. Tu información nos ayudará a tomar mejores decisiones.',
       buttonLabel: 'Ir a la encuesta',
       buttonClass: 'bg-green-600 hover:bg-green-700 text-white',
-      url: 'https://example.com/survey',
+      url: 'https://docs.google.com/forms/d/e/1FAIpQLSeRL6QDYx9SkrYKRGI6aPPC7MwAz9MXAP4oNyjf5VJC5ipHew/viewform',
       features: [
         'Solo toma 5 minutos',
         'Totalmente anónima',
         'Resultados públicos',
-      ],
-    },
-    {
-      icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
-      iconBg: 'bg-orange-500',
-      accentClass: 'border-orange-300 hover:border-orange-500',
-      tag: 'Reporte de punto crítico',
-      tagClass: 'bg-orange-100 text-orange-800',
-      title: 'Reporta un Punto Crítico',
-      description:
-        '¿Has identificado acumulación de basura o un problema ambiental? Repórtalo para que podamos tomar acción.',
-      buttonLabel: 'Reportar ahora',
-      buttonClass: 'bg-orange-500 hover:bg-orange-600 text-white',
-      url: 'https://example.com/report',
-      features: [
-        'Geolocalización automática',
-        'Foto adjunta opcional',
-        'Seguimiento en tiempo real',
       ],
     },
   ];
