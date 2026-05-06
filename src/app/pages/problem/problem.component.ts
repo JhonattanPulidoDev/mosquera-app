@@ -58,8 +58,8 @@ export class ProblemComponent {
 
   /** Section 3 – Impact Data */
   readonly stats: ImpactStat[] = [
-    { value: '+30%', label: 'Aumento en la generación de residuos en los últimos años', color: 'text-red-600' },
-    { value: '20%',  label: 'Solo una pequeña fracción de los residuos es reciclada',   color: 'text-amber-600' },
+    { value: '+43%', label: 'Aumento en la generación de residuos en los últimos años', color: 'text-red-600' },
+    { value: '10%',  label: 'Solo una pequeña fracción de los residuos es reciclada',   color: 'text-amber-600' },
     { value: 'Alto', label: 'Impacto ambiental sobre los ecosistemas locales',           color: 'text-orange-600' },
   ];
 
