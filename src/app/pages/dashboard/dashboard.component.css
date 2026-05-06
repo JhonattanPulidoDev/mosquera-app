@@ -1,0 +1,65 @@
+/* ============================================================
+  DASHBOARD PAGE — Component styles
+  Tailwind handles layout, colors, spacing.
+  This file adds:
+    - Hero min-height
+    - KPI card top accent on hover
+    - Chart card subtle left border on hover
+    - Response chip word-cloud size variation
+    - Conclusions card decorative polish
+    - prefers-reduced-motion guard
+  ============================================================ */
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.dashboard-hero {
+  min-height: 280px;
+}
+
+/* ── KPI card – top accent bar on hover ─────────────────────── */
+.kpi-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4ade80, #2e7d32);
+  border-radius: 999px 999px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.kpi-card:hover::after { opacity: 1; }
+
+/* ── Chart card – left accent on hover ──────────────────────── */
+.chart-card {
+  border-left: 3px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.chart-card:hover {
+  border-left-color: #2e7d32;
+}
+
+/* ── Response chips – word-cloud size variation ──────────────── */
+.response-chip:nth-child(3n+1) { font-size: 0.9rem; }
+.response-chip:nth-child(3n+2) { font-size: 0.8rem; }
+.response-chip:nth-child(3n)   { font-size: 0.85rem; }
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .kpi-card,
+  .chart-card,
+  .response-chip {
+    transition: none;
+  }
+
+  .kpi-card::after {
+    transition: none;
+  }
+}

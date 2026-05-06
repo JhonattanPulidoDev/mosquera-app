@@ -20,6 +20,7 @@ export const routes: Routes = [
       { path: '', loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent) },
       { path: 'problem', loadComponent: () => import('./pages/problem/problem.component').then(m => m.ProblemComponent) },
       // { path: 'dashboard', loadComponent: () => import('./pages/dashboard/dashboard.component').then(m => m.DashboardComponent) },
+      { path: 'dashboard', loadComponent: () => import('./pages/dashboard/dashboard.component').then(m => m.DashboardComponent) },
       { path: 'education', loadComponent: () => import('./pages/education/education.component').then(m => m.EducationComponent) },
       { path: 'participate', loadComponent: () => import('./pages/participate/participate.component').then(m => m.ParticipateComponent) },
       // { path: 'solutions', loadComponent: () => import('./pages/solutions/solutions.component').then(m => m.SolutionsComponent) },

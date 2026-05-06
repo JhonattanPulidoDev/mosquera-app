@@ -1,0 +1,375 @@
+<!-- ============================================================
+  DASHBOARD PAGE — Resultados de encuesta ambiental
+  Secciones:
+    1. Hero
+    2. KPI Cards
+    3. Gráficas (Q1–Q4)
+    4. Respuestas abiertas (Q5)
+    5. Conclusiones
+  Idioma: Español (es-CO)
+  ============================================================ -->
+
+<!-- ══════════════════════════════════════════════════════════
+  1. HERO
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="dashboard-hero relative overflow-hidden"
+  aria-labelledby="dashboard-hero-heading"
+>
+  <!-- Imagen de fondo -->
+  <img
+    src="/img/dashboard/dashboard_1.jpg"
+    alt="Vista aérea de Mosquera representando la encuesta ambiental"
+    class="absolute inset-0 w-full h-full object-cover"
+    width="1200"
+    height="300"
+    loading="eager"
+    aria-hidden="true"
+  />
+  <!-- Overlay verde oscuro -->
+  <div class="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-800/80 to-green-700/60" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="max-w-2xl">
+      <span
+        class="inline-flex items-center gap-1.5 bg-white/20 text-white text-xs font-semibold
+               px-3 py-1 rounded-full mb-5 tracking-wide uppercase border border-white/30"
+      >
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+        </svg>
+        Resultados de la encuesta
+      </span>
+
+      <h1
+        id="dashboard-hero-heading"
+        class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4"
+      >
+        Dashboard Ambiental
+      </h1>
+      <p class="text-green-100 text-base sm:text-lg leading-relaxed">
+        Visualización de los resultados obtenidos en la encuesta sobre manejo de
+        residuos y percepción ambiental en el municipio de Mosquera, Cundinamarca.
+      </p>
+
+      <!-- Meta chips -->
+      <div class="mt-6 flex flex-wrap gap-3">
+        @for (meta of [
+          {icon: '📋', text: totalEncuestados + ' encuestados'},
+          {icon: '📅', text: 'Mayo 2026'},
+          {icon: '📍', text: 'Mosquera, Cundinamarca'}
+        ]; track meta.text) {
+          <span class="inline-flex items-center gap-1.5 bg-white/15 border border-white/25
+                       text-white text-xs font-medium px-3 py-1.5 rounded-full">
+            <span aria-hidden="true">{{ meta.icon }}</span>{{ meta.text }}
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  2. KPI CARDS
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="kpi py-10 bg-gray-50"
+  aria-labelledby="kpi-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 id="kpi-heading" class="sr-only">Indicadores clave</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      @for (card of kpiCards; track card.label) {
+        <div
+          class="kpi-card bg-white rounded-2xl border border-gray-100 shadow-sm p-5
+                 flex items-start gap-4 hover:shadow-md hover:-translate-y-1
+                 transition-all duration-300"
+        >
+          <!-- Icon -->
+          <div
+            [class]="'w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ' + card.iconBg"
+            aria-hidden="true"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="card.icon"/>
+            </svg>
+          </div>
+
+          <!-- Text -->
+          <div class="min-w-0">
+            <p [class]="'text-2xl font-extrabold truncate ' + card.color">{{ card.value }}</p>
+            <p class="text-xs font-semibold text-gray-700 mt-0.5">{{ card.label }}</p>
+            <p class="text-xs text-gray-400 mt-0.5 truncate">{{ card.sub }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  3. GRÁFICAS
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="charts py-12 bg-white"
+  aria-labelledby="charts-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-10">
+      <span class="text-green-600 text-sm font-semibold uppercase tracking-widest">Análisis de resultados</span>
+      <h2
+        id="charts-heading"
+        class="mt-2 text-2xl sm:text-3xl font-bold text-gray-900"
+      >
+        Visualización por pregunta
+      </h2>
+      <div class="mt-4 flex justify-center">
+        <span class="inline-block w-10 h-1 rounded-full bg-green-500"></span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- ── Q1: Donut ── -->
+      <div class="chart-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+        <div class="mb-4">
+          <span class="inline-block bg-green-100 text-green-700 text-xs font-bold px-2.5 py-1 rounded-full mb-2">
+            Pregunta 1
+          </span>
+          <h3 class="text-sm font-bold text-gray-800 leading-snug">
+            ¿Ha observado basura acumulada en espacios públicos de su barrio?
+          </h3>
+        </div>
+        @if (isBrowser) {
+          <apx-chart
+            [series]="chartQ1.series"
+            [chart]="chartQ1.chart"
+            [labels]="chartQ1.labels"
+            [colors]="chartQ1.colors"
+            [legend]="chartQ1.legend"
+            [dataLabels]="chartQ1.dataLabels"
+            [stroke]="chartQ1.stroke"
+            [fill]="chartQ1.fill"
+            [plotOptions]="chartQ1.plotOptions"
+            [tooltip]="chartQ1.tooltip"
+          ></apx-chart>
+        }
+      </div>
+
+      <!-- ── Q2: Horizontal Bar ── -->
+      <div class="chart-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+        <div class="mb-4">
+          <span class="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-2.5 py-1 rounded-full mb-2">
+            Pregunta 2
+          </span>
+          <h3 class="text-sm font-bold text-gray-800 leading-snug">
+            ¿Qué problemas ha notado en su comunidad relacionados con los residuos?
+          </h3>
+        </div>
+        @if (isBrowser) {
+          <apx-chart
+            [series]="chartQ2.series"
+            [chart]="chartQ2.chart"
+            [xaxis]="chartQ2.xaxis"
+            [yaxis]="chartQ2.yaxis"
+            [colors]="chartQ2.colors"
+            [dataLabels]="chartQ2.dataLabels"
+            [plotOptions]="chartQ2.plotOptions"
+            [tooltip]="chartQ2.tooltip"
+          ></apx-chart>
+        }
+      </div>
+
+      <!-- ── Q3: Vertical Bar ── -->
+      <div class="chart-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+        <div class="mb-4">
+          <span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2.5 py-1 rounded-full mb-2">
+            Pregunta 3
+          </span>
+          <h3 class="text-sm font-bold text-gray-800 leading-snug">
+            ¿Cuál considera que es la principal causa del problema?
+          </h3>
+        </div>
+        @if (isBrowser) {
+          <apx-chart
+            [series]="chartQ3.series"
+            [chart]="chartQ3.chart"
+            [xaxis]="chartQ3.xaxis"
+            [yaxis]="chartQ3.yaxis"
+            [colors]="chartQ3.colors"
+            [dataLabels]="chartQ3.dataLabels"
+            [plotOptions]="chartQ3.plotOptions"
+            [tooltip]="chartQ3.tooltip"
+          ></apx-chart>
+        }
+      </div>
+
+      <!-- ── Q4: Donut + KPI mini cards ── -->
+      <div class="chart-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+        <div class="mb-4">
+          <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded-full mb-2">
+            Pregunta 4
+          </span>
+          <h3 class="text-sm font-bold text-gray-800 leading-snug">
+            ¿En su hogar separan los residuos?
+          </h3>
+        </div>
+        @if (isBrowser) {
+          <apx-chart
+            [series]="chartQ4.series"
+            [chart]="chartQ4.chart"
+            [labels]="chartQ4.labels"
+            [colors]="chartQ4.colors"
+            [legend]="chartQ4.legend"
+            [dataLabels]="chartQ4.dataLabels"
+            [stroke]="chartQ4.stroke"
+            [fill]="chartQ4.fill"
+            [plotOptions]="chartQ4.plotOptions"
+            [tooltip]="chartQ4.tooltip"
+          ></apx-chart>
+        }
+
+        <!-- Mini KPI chips below donut -->
+        <div class="grid grid-cols-3 gap-3 mt-4">
+          @for (chip of [
+            {label: 'Sí separan', value: q4.si, color: 'text-green-600', bg: 'bg-green-50 border-green-100'},
+            {label: 'A veces', value: q4.aveces, color: 'text-amber-600', bg: 'bg-amber-50 border-amber-100'},
+            {label: 'No separan', value: q4.no, color: 'text-red-500', bg: 'bg-red-50 border-red-100'}
+          ]; track chip.label) {
+            <div [class]="'rounded-xl border p-3 text-center ' + chip.bg">
+              <p [class]="'text-lg font-extrabold ' + chip.color">{{ chip.value }}</p>
+              <p class="text-xs text-gray-500 mt-0.5">{{ chip.label }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  4. RESPUESTAS ABIERTAS (Q5)
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="open-responses py-12 bg-gray-50"
+  aria-labelledby="open-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-10">
+      <span class="text-green-600 text-sm font-semibold uppercase tracking-widest">Pregunta 5</span>
+      <h2
+        id="open-heading"
+        class="mt-2 text-2xl sm:text-3xl font-bold text-gray-900"
+      >
+        Opiniones y sugerencias de la comunidad
+      </h2>
+      <p class="mt-3 text-gray-500 max-w-lg mx-auto text-sm">
+        ¿Qué cree que ayudaría a mejorar esta situación? — Respuestas abiertas de los encuestados.
+      </p>
+      <div class="mt-4 flex justify-center">
+        <span class="inline-block w-10 h-1 rounded-full bg-green-500"></span>
+      </div>
+    </div>
+
+    <!-- Word-cloud style response cards -->
+    <div class="flex flex-wrap justify-center gap-3" role="list" aria-label="Respuestas de la comunidad">
+      @for (resp of openResponses; track resp; let i = $index) {
+        <div
+          role="listitem"
+          [class]="'response-chip px-5 py-3 rounded-2xl border text-sm font-semibold shadow-sm
+                   hover:-translate-y-1 hover:shadow-md transition-all duration-200 cursor-default
+                   ' + (i % 4 === 0 ? 'bg-green-600 text-white border-green-600'
+                      : i % 4 === 1 ? 'bg-white text-green-700 border-green-200'
+                      : i % 4 === 2 ? 'bg-green-50 text-green-800 border-green-200'
+                      : 'bg-gray-100 text-gray-700 border-gray-200')"
+        >
+          <span class="mr-1.5 opacity-70" aria-hidden="true">💬</span>
+          {{ resp }}
+        </div>
+      }
+    </div>
+
+    <!-- Nota metodológica -->
+    <p class="mt-8 text-center text-xs text-gray-400">
+      * Respuestas seleccionadas y agrupadas por temática. Algunas respuestas pueden haber sido parafraseadas para mayor claridad.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+  5. CONCLUSIONES
+  ══════════════════════════════════════════════════════════ -->
+<section
+  class="conclusions py-12 bg-white"
+  aria-labelledby="conclusions-heading"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="conclusions-card relative overflow-hidden rounded-3xl bg-gradient-to-br
+             from-green-700 to-green-900 p-8 sm:p-12 shadow-xl"
+    >
+      <!-- Decorative circle -->
+      <span
+        class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-white/5"
+        aria-hidden="true"
+      ></span>
+      <span
+        class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-white/5"
+        aria-hidden="true"
+      ></span>
+
+      <div class="relative z-10">
+        <!-- Icon -->
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+
+        <span class="text-green-300 text-xs font-semibold uppercase tracking-widest">Conclusiones</span>
+        <h2
+          id="conclusions-heading"
+          class="mt-2 text-2xl sm:text-3xl font-extrabold text-white leading-tight mb-5"
+        >
+          ¿Qué nos dice la encuesta?
+        </h2>
+
+        <p class="text-green-100 text-base sm:text-lg leading-relaxed mb-6">
+          La encuesta evidencia la importancia de fortalecer la <strong class="text-white">educación ambiental</strong>
+          y promover una mayor <strong class="text-white">participación ciudadana</strong> para mejorar el manejo de
+          residuos en la comunidad.
+        </p>
+
+        <!-- Key takeaways -->
+        <ul class="space-y-3" role="list">
+          @for (point of [
+            (q1.si | number:'1.0-0') + ' de ' + totalEncuestados + ' encuestados (' + (q1.si * 100 / totalEncuestados | number:'1.0-0') + ' %) ha observado basura acumulada en espacios públicos.',
+            'Los ' + q2[0].label.toLowerCase() + ' son el problema más reportado (' + q2[0].value + ' encuestados).',
+            'La ' + q3[0].label.toLowerCase() + ' es señalada como la principal causa.',
+            'El ' + (q4.si * 100 / totalEncuestados | number:'1.0-0') + ' % de los hogares separa residuos de forma consistente.'
+          ]; track point) {
+            <li class="flex items-start gap-3 text-green-100 text-sm">
+              <span
+                class="mt-0.5 w-5 h-5 shrink-0 rounded-full bg-green-500/40 flex items-center justify-center"
+                aria-hidden="true"
+              >
+                <svg class="w-3 h-3 text-green-200" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"/>
+                </svg>
+              </span>
+              {{ point }}
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
